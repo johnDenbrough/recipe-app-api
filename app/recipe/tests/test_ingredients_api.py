@@ -11,6 +11,7 @@ from recipe.serializers import IngredientSerializer
 
 INGREDIENT_URL = reverse('recipe:ingredient-list')
 
+
 class PublicIngredientsApiTests(TestCase):
     """Test the public available ingredients api"""
 
@@ -22,6 +23,7 @@ class PublicIngredientsApiTests(TestCase):
         res = self.client.get(INGREDIENT_URL)
 
         self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
+
 
 class PrivateIngredientsApiTest(TestCase):
     """Test the authorized user ingredients API"""
