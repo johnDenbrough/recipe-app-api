@@ -13,13 +13,13 @@ TAGS_URL = reverse('recipe:tag-list')
 
 
 class PublicTagsApiTests(TestCase):
-    """Test the public availabe tags api"""
+    """Test the public available tags api"""
 
     def setUp(self):
         self.client = APIClient()
 
     def test_login_required(self):
-        """Test taht login is required for retrieve tags"""
+        """Test that login is required for retrieve tags"""
         res = self.client.get(TAGS_URL)
 
         self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
