@@ -7,7 +7,9 @@ from core.models import Tag, Ingredient, Recipe
 from recipe import serializers
 
 
-class BaseRecipeAttrViewSet(viewsets.GenericViewSet, mixins.ListModelMixin, mixins.CreateModelMixin):
+class BaseRecipeAttrViewSet(
+    viewsets.GenericViewSet, mixins.ListModelMixin, mixins.CreateModelMixin
+):
     """Base ViewSet for Recipes"""
     authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated,)
